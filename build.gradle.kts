@@ -17,6 +17,9 @@ repositories {
 
 application {
     mainClass.set("com.cburch.logisim.Main")
+    // Workaround for issue #566 until Darklaf has been updated to not anymore
+    // rely on internal Swing APIs (weisJ/darklaf#234).
+    applicationDefaultJvmArgs = listOf("--illegal-access=permit")
 }
 
 dependencies {
